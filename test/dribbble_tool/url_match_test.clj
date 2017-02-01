@@ -16,11 +16,9 @@
       (is (set= (recognize dribbble "https://dribbble.com/shots/1905065-Travel-Icons-pack?list=users&offset=1")
                 '([:id "1905065-Travel-Icons-pack"] [:offset "1"])))
 
-      (is (set= (recognize dribbble "https://twitter.com/shots/1905065-Travel-Icons-pack?list=users&offset=1")
-                nil))
+      (is (nil? (recognize dribbble "https://twitter.com/shots/1905065-Travel-Icons-pack?list=users&offset=1")))
 
-      (is (set= (recognize dribbble "https://dribbble.com/shots/1905065-Travel-Icons-pack?list=users")
-                nil))
+      (is (nil? (recognize dribbble "https://dribbble.com/shots/1905065-Travel-Icons-pack?list=users")))
 
       (is (set= (recognize dribbble2 "https://dribbble.com/shots/1905065-Travel-Icons-pack?list=users&offset=1")
                 '([:id "1905065-Travel-Icons-pack"] [:type "users"] [:offset "1"]))))))
